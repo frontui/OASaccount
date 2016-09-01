@@ -1,6 +1,10 @@
+#!/usr/bin/env node
+
 /**
  *! frontman 手脚架
  * (c) frontui team
+ * 
+ * by tommyshao
  */
 
 var config = require('./config.json')
@@ -28,13 +32,18 @@ require('./task/updateTask')()
 *  合并 sprite 任务
 ------------- */
 // preload: npm install gulp.spritesmith imagemin-pngquant merge-stream --save
-// require('./task/spriteTask')()
+require('./task/spriteTask')()
+
+/*--------
+*  更新 mixin 任务
+------------- */
+require('./task/mixinTask')()
 
 
 /*-------------
-*  svn任务
+*  build任务
 -------------*/
-// require('./task/svnTask')(Lib.banner);
+require('./task/buildTask')(Lib.banner);
 
 /*--------
 *  tfs任务
@@ -45,4 +54,4 @@ require('./task/updateTask')()
 /*--------
 *  doc说明文档
 ------------- */
-// require('./task/docTask')(config.docs)
+require('./task/docTask')(config.docs)

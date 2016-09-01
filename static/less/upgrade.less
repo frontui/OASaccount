@@ -1,0 +1,51 @@
+//@import "BrickPlus/normalize";                         //项目引用样式初始化
+@import "BrickPlus-Mixin/BrickPlus-theme-default";                            //项目样式设定项
+//@import "BrickPlus/mixin/mixin";                               //项目样式工具
+//@import "_font";                              //项目字体
+//@import "components/_gobal";                  //自定义全局样式
+//@import "components/_typeset";           //排版工具
+
+// 直接页面引入brickplus.min.css
+
+// @default-FontColor: #666;
+// @link-FontColor:
+
+.fn-mb-20 {
+  margin-bottom: 20px;
+}
+.fn-mb-40 {
+  margin-bottom: 20px;
+}
+
+//提示升级页面
+.updatepage{
+    padding: 50px 0 0 0;
+    text-align: center;
+    .logo{
+        width: 482px;
+        margin: 0 auto;
+        padding: 0;
+        li{
+            float: left;
+            width: 240px;
+            height: 90px;
+            text-align: center;
+            padding:10px 0 0 0;
+            cursor: pointer;
+            list-style: none;
+
+            &.ie{
+                border-right: 1px solid #e9e9e9;
+            }
+
+            a{
+                color:@fontColor-base;
+                text-decoration: none;
+
+                &:hover {
+                  color: @fontColor-link;
+                }
+            }
+        }
+    }
+}

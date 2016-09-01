@@ -2,6 +2,6 @@
 	"name": "gulp-boilerplate",
 	"version": "1.0.0",
 	"port": 3002,
-	"path": "../../svn/gulp-boilerplate",
+	"path": "./svn/gulp-boilerplate",
 	"staticPath": "/static"
 }
