@@ -23,6 +23,14 @@ npm install -d
 
 ```
 
+关于删除windows下删除`node_modules`包
+
+```
+git rm -r --cached node_modules
+```
+
+删除后重新安装
+
 ## 选择 ui 框架
 
 执行命令自动从 `bower` 上安装最新的 ui 框架，ui框架在更新文件必须打上 `tag` 或版本
