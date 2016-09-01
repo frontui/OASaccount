@@ -1,14 +1,15 @@
-node_modules/
+# 统一由gulp-boilerplate管理依赖文件
+# node_modules/
 dist/
 html/
 output/
 
 node_modules
 
-bower_components
-bower_components/
+# bower_components
+# bower_components/
 
-build/node_modules/
+# build/node_modules/
 output/
 www
 www/
