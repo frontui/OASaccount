@@ -49,6 +49,14 @@ gulp frontui
 npm start
 ```
 
+## 关于静态资源路径
+
+在http服务器已经设置了 `static`目录和`www`目录同级同为根目录，因此在模板文件中直接使用`js/xxx.js`,`css/main.css`
+
+在项目`build`自动做匹配判断转换成`static/js/xxx.js`,`static/css/main.css`
+
+而`bower_components`目录的东西使用`/bower_components/jquery/dist/jquery.js`，http 服务器做了路由转换
+
 ## 发布项目
 
 修改`svn.json`文件中的`path`字段和端口号
