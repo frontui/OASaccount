@@ -1,6 +1,5 @@
 # 统一由gulp-boilerplate管理依赖文件
 node_modules/
-dist/
 html/
 output/
 

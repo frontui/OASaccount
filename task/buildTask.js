@@ -145,9 +145,9 @@ module.exports = function svnTask(banner) {
           port: svn.port,
           // 使用浏览器打开
           // 可以自定义配置
-        //   browser: ['google chrome', 'firefox', 'Internet Explore']
+        //   browser: ['chrome', 'firefox', 'Internet Explore']
           // 只启动 chrome 开发
-          browser: ['google chrome'],
+          browser: ['chrome'],
           // 管理代理
           middleware: [jsonProxy]
       })
