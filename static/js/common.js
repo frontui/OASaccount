@@ -28,15 +28,11 @@
       'userDefine': (function() {
         return config['userDefine'] ? config['userDefine'] : '/userDefine';
       })(),
-      'avalon': '/bower_components/avalon/dist/avalon.js',
-      'ui/datetimepicker': 'frontui/datetimepicker/datetimepicker'
+      'avalon': '/bower_components/avalon/dist/avalon.js'
     },
     // 以来声明
     shim: {
       'ui' : {
-        deps: ['jquery']
-      },
-      'ui/datetimepicker' : {
         deps: ['jquery']
       }
     }
@@ -44,6 +40,6 @@
 })();
 // common
 // 共同部分
-require(['jquery', 'ui'], function($, UI) {
+require(['jquery', 'ui', 'frontui/datetimepicker/datetimepicker'], function($, UI) {
   // code
 });

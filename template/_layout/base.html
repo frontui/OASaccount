@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="zh-CN"><![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10" lang="zh-CN"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="zh-CN"><!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge;chorme=1" />
@@ -11,7 +13,7 @@
     <meta name="keywords" content="xxx" />
     <meta name="Robots" content="all" />
     <title>{% block title %}{% endblock %}</title>
-    <!--[if lt IE 7]>
+    <!--[if lte IE 7]>
     <script >
       window.onload = function(){ location.href='提示升级.html'; }
     </script>

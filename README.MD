@@ -6,7 +6,7 @@
 > git clone http://git-frontpay.cn/gulp-boilerplate.git [myproject]
 ```
 
-在终端中将模板拷贝到`myproject`[项目名称，自定义]目录，然后进入文件夹`cd myproject`
+在终端中将模板拷贝到 `myproject` [项目名称，自定义]目录，然后进入文件夹 `cd myproject`
 
 ## 安装 node 包依赖
 

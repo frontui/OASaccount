@@ -30,8 +30,10 @@ module.exports = function svnTask(banner) {
               .pipe($.prettify({indent_size: 2}))
               //.pipe($.changed(svn.path))
               .pipe($.replace(/\/static/g, './static'))
-              .pipe($.replace(/"(\/)bower_components\/(.[^\s]*)\/([a-zA-Z0-9.\-]+\.js)(.*)"/g, '"'+ config.staticPath +'/js/$3$4"'))
+              //.pipe($.replace(/"(\/)bower_components\/(.[^\s]*)\/([a-zA-Z0-9.\-]+\.js)(.*)"/g, '"'+ config.staticPath +'/js/$3$4"'))
               .pipe($.replace(/"(js|css|images|fonts)\//g, '"./static/$1/'))
+              // 将 bower_component重新定位到./static目录
+              .pipe($.replace(/(\/)(bower_components)\//g, './static/js/$2/'))
               .pipe($.replace(/\/mock_data/g, './mock_data'))
               .pipe(gulp.dest(tmpPath))
   });
@@ -65,7 +67,8 @@ module.exports = function svnTask(banner) {
       return gulp.src([config.staticPath+'/js/**/**.js'], {base: 'client'})
             .pipe($.plumber( { errorHandler: $.notify.onError('错误: <%= error.message %>') } ))
           // require.config
-          .pipe($.replace(/'(\/)bower_components\/(.[^\s]*)\/([0-9a-zA-Z\.-]*)'/g, '\'$3\''))
+        //   .pipe($.replace(/'(\/)bower_components\/(.[^\s]*)\/([0-9a-zA-Z\.-]*)'/g, '\'$3\''))
+          .pipe($.replace(/(\/)(bower_components)(\/)/g, '$2$3'))
           //.pipe($.changed(svn.staticPath))
           .pipe($.uglify({mangle: false}))
           .pipe($.header(banner, { pkg: pkg}))
@@ -77,6 +80,12 @@ module.exports = function svnTask(banner) {
   gulp.task('svnBowerJs', function(){
       return gulp.src(config.bower_source)
               .pipe(gulp.dest(tmpPath + svn.staticPath + '/js'))
+  })
+
+  // 拷贝 bower 包到./static目录 
+  gulp.task('svnBower', function() {
+      return gulp.src(config.bower_components.slice(1)+'/**/**')
+                .pipe(gulp.dest(tmpPath + svn.staticPath + '/js' + config.bower_components))
   })
 
   // images
@@ -142,6 +151,8 @@ module.exports = function svnTask(banner) {
           // 管理代理
           middleware: [jsonProxy]
       })
+
+      cb()
   })
 
   // 清除生成目录
@@ -157,7 +168,7 @@ module.exports = function svnTask(banner) {
 
   gulp.task('build', function(cb){
       $.sequence(
-          ['svnTemplate', 'svnCopy', 'svnCss', 'svnJs', 'svnImage', 'svnBowerJs', 'svnDoc'], // 先构建，生成到临时文件夹 temp
+          [ 'svnCopy', 'svnCss', 'svnJs', 'svnImage', 'svnBower', 'svnTemplate', 'svnDoc'], // 先构建，生成到临时文件夹 temp
           'clean:dist',  // 清除之前发布内容
           'bundle',      // 拷贝temp 内容到发布目录
           'svnServer',   // 启动服务人工检查对比页面

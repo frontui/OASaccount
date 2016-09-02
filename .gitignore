@@ -30,6 +30,7 @@ _thirdPart/
 _thirdPart
 static/css
 static/css/
+svn/
 
 *.exe
 #svn.json

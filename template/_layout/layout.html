@@ -8,6 +8,17 @@
 {% endblock %}
 
 {% block globalJs %}
+    <script>
+      // 统一域名
+      //document.domain = 'frontpay.cn';
+      // 全局require静态文件配置
+      window['webConfig'] = {
+          // 前端交互js路径
+          baseUrl: '{{ static }}/js',
+          // 后端业务逻辑js路径
+          userDefine: '/userDefine'
+      };
+    </script>
     <script src="/bower_components/requirejs/require.js"></script>
     <script src="js/common.js"></script>  
 {% endblock %}

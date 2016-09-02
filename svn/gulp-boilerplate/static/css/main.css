@@ -1,7 +1,0 @@
-/*! gulp-boilerplate v1.0.0
-*  by frontui
-*  (c) 2014-2016 www.frontpay.cn
-* updated on 2016-09-01
-*  Licensed under Apache-2.0
-*/
- @charset "utf-8";@-webkit-keyframes effectOne{0%{-webkit-opacity:.3;-webkit-transform:scale(.5);background-color:rgba(240,96,96,.1)}40%{-webkit-opacity:.5;-webkit-box-shadow:0 0 0 2px rgba(255,255,255,.1),0 0 10px 10px #f06060,0 0 0 10px rgba(255,255,255,.5)}100%{-webkit-box-shadow:0 0 0 2px rgba(255,255,255,.1),0 0 10px 10px #f06060,0 0 0 10px rgba(255,255,255,.5);-webkit-transform:scale(1.5);-webkit-opacity:0}}@keyframes effectOne{0%{opacity:.3;-webkit-transform:scale(.5);transform:scale(.5);background-color:rgba(240,96,96,.1)}40%{opacity:.5;box-shadow:0 0 0 2px rgba(255,255,255,.1),0 0 10px 10px #f06060,0 0 0 10px rgba(255,255,255,.5)}100%{box-shadow:0 0 0 2px rgba(255,255,255,.1),0 0 10px 10px #f06060,0 0 0 10px rgba(255,255,255,.5);-webkit-transform:scale(1.5);transform:scale(1.5);opacity:0}}@-webkit-keyframes close-btn{0%{-webkit-transform:rotate(0)}100%{-webkit-transform:rotate(90deg)}}@keyframes close-btn{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(90deg);transform:rotate(90deg)}}.fade{opacity:0;-webkit-transition-property:opacity;transition-property:opacity;-webkit-transition-duration:.15s;transition-duration:.15s;-webkit-transition-timing-function:linear;transition-timing-function:linear;-webkit-transition-delay:0;transition-delay:0}.fade.in{opacity:1}
