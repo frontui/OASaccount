@@ -53,7 +53,7 @@ module.exports = function defaultTask(serverRoot) {
   //      'not ie <= 8'
   //      etc...
   gulp.task('less', function(){
-      return gulp.src([config.staticPath+'/less/**.less', '!'+ config.staticPath +'/_**/**', '!'+ config.staticPath + '/**/_*.less'])
+      return gulp.src([config.staticPath+'/less/**.less', '!'+ config.staticPath +'/_**/**', '!'+ config.staticPath + '/**/_*.less', '!'+ config.staticPath + '/BrickPlus-Mixin/**/**'])
                   .pipe($.sourcemaps.init())
                   .pipe($.plumber( { errorHandler: $.notify.onError('错误: <%= error.message %>') } ))
                   .pipe($.less())
@@ -88,7 +88,7 @@ module.exports = function defaultTask(serverRoot) {
           },
           server: {
               // 目录都作为根目录访问
-              baseDir: ['./www', './static'],
+              baseDir: ['./'+ config.destPath, './static'],
               directory: true,
               routes: {
                   '/bower_components': './bower_components'
